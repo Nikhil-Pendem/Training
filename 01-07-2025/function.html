@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h2>Types of functions</h2>
+    <script>
+
+        document.write("<h3>----IIFE Function----</h3>"
+
+        )
+        (function(){
+            document.write("I am IIFE Functio Immedietly Invoked")
+        })();
+
+        document.write("<h3>----Anonymous Function----</h3>")
+
+        let result=function(){
+            document.write("I am Anonymous Function"+"<br>")
+
+        }
+        result();
+
+        document.write("<h3>----Constructor Function----</h3>")
+
+
+        function Employee(name,salary)
+        {
+            this.name="name";
+            this.salary="salary";
+        }
+       // let emp=new Employee("nikhil",52500);
+      //  let emp=new Employee("sunny",52500);
+
+
+
+
+
+    </script>
+</body>
+</html>

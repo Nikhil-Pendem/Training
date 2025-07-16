@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task5</title>
+</head>
+<body>
+    <script>
+        let device = prompt("Enter Device Name :");
+
+  let time;
+
+  switch(device) {
+    case 'phone':
+      time = "2 hrs";
+      break;
+    case 'tablet':
+      time = "2.5 hrs";
+      break;
+    case 'laptop':
+      time = "3 hrs";
+      break;
+    default:
+      time = "Invalid Device";
+  }
+
+   document.write("<h2>Charge time is : " + time + "</h2>");   
+
+    </script>
+</body>
+</html>

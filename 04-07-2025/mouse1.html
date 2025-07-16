@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>onchange Event</h2>
+
+    <select onchange="changeTheme(this)">
+        <option value="">Choose Theme</option>
+        <option value="lightblue">Light Blue</option>
+        <option value="pink">Pink</option>
+        <option value="red"> Red</option>
+        <option value="yellow">Yellow</option>
+    </select>
+    <script>
+        function changeTheme(select){
+            document.body.style.backgroundColor=select.value
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    <p>Welcome to Flipkart<a href="#" target="_blank" id="lnk">Login Page</a></p>
+
+    <img src="lake.jpg" height="400px" weight="500px" id="img"/>
+    <script>
+        let link=document.getElementById("lnk")
+        console.log("href attibute is :"+link.getAttribute("href"))
+        link.setAttribute("href","https://flipkart.com/")
+
+        let img=document.getElementById("img")
+//        img.setAttribute("height","500px")
+        img.setAttribute("width","500px")
+    </script>
+    
+</body>
+</html>

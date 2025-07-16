@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car{
+            constructor(brand,model){
+                this.brand=brand;
+                this.model=model;
+            }
+            display(){
+                console.log(`My car details ${this.brand} and ${this.model}`)
+            }
+        }
+
+        let mycar= new Car("Swift","2025")
+        let mycar1= new Car("Innova","2028")
+
+        mycar.display()
+        mycar1.display()
+
+        function sortNames(...names){
+            return names.sort()
+        }
+
+        console.log(sortNames("Nikhil","Sunny","Vishnu"))
+        console.log(sortNames("Nikhil","Sunny","Vishnu","Mahesh","Tanish","Vamshi"))
+
+
+         function addNumbers(...numbers){
+             let total=0
+             for(let num of numbers)
+        }
+        console.log(addNumbers("5","6","8"))
+
+       
+    </script>
+    
+</body>
+</html>

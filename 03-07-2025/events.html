@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent" style="padding:20px; border:1px solid rgb(203, 227, 20);">
+  Parent
+  <button id="child">Child Button</button>
+</div>
+
+    <script>
+        const parent = document.getElementById('parent');
+const child = document.getElementById('child');
+
+parent.addEventListener('click', () => {
+  console.log('Parent clicked - bubbling phase');
+});
+
+parent.addEventListener('click', () => {
+  console.log('Parent clicked - capturing phase');
+}, true);
+
+child.addEventListener('click', (event) => {
+  console.log('Child clicked');
+  event.stopPropagation(); // Prevent bubbling to parent
+});
+
+ 
+    </script>
+</body>
+</html>

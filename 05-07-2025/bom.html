@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bom</title>
+</head>
+<body>
+    <button onclick="setTimeout(()=>{alert('function called later')},5000)">After some time</button>
+    <script>
+        function windowSize(){
+            document.write("height :"+window.innerHeight+"width :"+window.innerWidth)
+        
+        }
+        function screenSize(){
+            document.write("screen Height :"+screen.height+"screen width"+screen.width+"<br>")
+
+        }
+        function availSize(){
+            document.write("Availble Height :"+screen.availHeight+"Available width :"+screen.availWidth+"<br>")
+        }
+        function callme(){
+            alert("YOU CALLED ME")
+        }
+
+
+    </script>
+    <button onclick="windowSize()">Window Size</button>
+    <hr>
+    <button onclick="screenSize()">Screen Size</button>
+    <hr>
+    <button onclick="availSize()">Available Size</button>
+    <hr>
+    <button onclick="callme()">cal me</button>
+
+
+
+
+    
+</body>
+</html>

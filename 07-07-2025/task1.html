@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Change Background Color</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    transition: background-color 0.5s ease;
+  }
+  #colorCode {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<button id="changeBgBtn">Change Background</button>
+<div id="colorCode">Background color: #ffffff</div>
+
+<script>
+  function getRandomHexColor() {
+     const hex = Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, '0');
+    return `#${hex}`;
+  }
+
+  const button = document.getElementById('changeBgBtn');
+  const colorCodeDiv = document.getElementById('colorCode');
+
+  button.addEventListener('click', () => {
+    const newColor = getRandomHexColor();
+    document.body.style.backgroundColor = newColor;
+    colorCodeDiv.textContent = `Background color: ${newColor}`;
+  });
+</script>
+
+</body>
+</html>

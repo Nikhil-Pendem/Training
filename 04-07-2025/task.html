@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+      width: 300px;
+      height: 350px;
+      margin: 50px auto;
+      background-color: rgb(237, 176, 176);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+        <div class="abc">
+            <h2 style="color: blue;">To-Do List</h2>
+
+           
+             <input 
+    type="text"
+    id="taskInput"
+    placeholder="Enter a new task"
+    /><br>
+    
+    <br>
+    <button onclick="handleAction('add')">Add Task</button>
+    <div id="taskList"></div>
+        </div>
+    </div>
+
+    <script>
+function handleAction(action){
+    switch(action){
+        case 'add':const input=document.getElementById("taskInput");
+        const taskInput=input.value.trim();
+        if(taskText!==" "){
+            const taskList=document.getElementById("taskList");
+        
+        const taskItem=document.createElement("div");
+        taskItem.innerText=taskText;
+        taskList.appendChild(taskItem);
+        input.value="";
+    }
+    break;
+    default:
+        console.log("Unknown action")
+
+    }
+}
+    </script>
+</body>
+</html>

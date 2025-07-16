@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers</title>
+    <style>
+        body{
+            background-color: black;
+            color: antiquewhite;
+            font-size: 200px;
+            margin: small;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p{
+            margin: 0;
+        }
+        button{
+            font-size: 100px;
+            background-color: blue;
+            font-size: 100px;
+            margin-top: 10px;
+            color: antiquewhite;
+            text-align: center;
+            width: 60%;
+            height: 100px;
+            padding: auto;
+        }
+    </style>
+</head>
+<center>
+    <b>
+<body>
+    <script>
+        let intervalId;
+        function displayTime(){
+            let date=new Date()
+            document.getElementById("clk").innerHTML=date.toLocaleTimeString()
+        }
+        function stopTimer(){
+            clearInterval(intervalId)
+        }
+        intervalId=setInterval(displayTime,1000)
+        
+    </script>
+     <p><span id="clk"></span></p>
+     
+     <button onclick="stopTimer()">Click Me</button>
+ 
+</body>
+</b>
+</center>
+</html>

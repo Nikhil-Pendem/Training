@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat System</title>
+  <style>
+    body {
+      background-color: #eac6e9;
+      font-family: Arial, sans-serif;
+    }
+
+    .chat-box {
+      width: 300px;
+      margin: 50px auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .header {
+      background-color:rgb(42, 193, 193);
+      padding: 10px;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .messages {
+      height: 300px;
+      padding: 10px;
+      overflow-y: scroll;
+      background-color: #f5f5f5;
+    }
+
+    .message {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      max-width: 80%;
+    }
+
+    .friend {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      align-self: flex-start;
+    }
+
+    .you {
+      background-color: #e1f3d8;
+      align-self: flex-end;
+      margin-left: auto;
+    }
+
+    .sender {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .input-box {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    .input-box input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+
+    .input-box button {
+      margin-left: 10px;
+      padding: 8px 12px;
+      background-color: #0a97d3;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <div class="header">Chat System</div>
+    <div class="messages" id="chatMessages">
+      <div class="message friend">
+        <div class="sender">Friend</div>
+        yes yes u r correct
+      </div>
+      <div class="message you">
+        <div class="sender">You</div>
+        ohh what about lunch
+      </div>
+      <div class="message friend">
+        <div class="sender">Friend</div>
+        we can eat in break time
+      </div>
+      <div class="message you">
+        <div class="sender">You</div>
+        in lunch tym?
+      </div>
+      <div class="message friend">
+        <div class="sender">Friend</div>
+        playing cricket...
+      </div>
+      <div class="message you">
+        <div class="sender">You</div>
+        ok
+      </div>
+       <div class="message friend">
+        <div class="sender">Friend</div>
+        you come
+      </div>
+    </div>
+    <div class="input-box">
+      <input type="text" id="msgInput" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function sendMessage() {
+      const input = document.getElementById('msgInput');
+      const message = input.value.trim();
+      if (message === '') return;
+
+      const chatMessages = document.getElementById('chatMessages');
+
+      const msgDiv = document.createElement('div');
+      msgDiv.classList.add('message', 'you');
+      msgDiv.innerHTML = <div class="sender">You</div>{message};
+
+      chatMessages.appendChild(msgDiv);
+      input.value = '';
+
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+  </script>
+</body>
+</html>

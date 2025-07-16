@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    document.write("=== var ===<br>");
+    var name = "Alice";
+    document.write("Your name is: " + name + "<br>");
+    document.write("Type of name: " + typeof name + "<br><br>");
+ 
+    document.write("=== let ===<br>");
+    let age = 25;
+    document.write("Your age is: " + age + "<br>");
+    document.write("Type of age: " + typeof age + "<br><br>");
+ 
+    document.write("=== const ===<br>");
+    const pi = 3.14159;
+    document.write("Value of pi: " + pi + "<br>");
+    document.write("Type of pi: " + typeof pi + "<br><br>");
+
+
+    document.write("=== String ===<br>");
+    var myString = "Hello World";
+    document.write("Value: " + myString + "<br>");
+    document.write("Type: " + typeof myString + "<br><br>");
+ 
+    document.write("=== Number ===<br>");
+    let myNumber = 123.45;
+    document.write("Value: " + myNumber + "<br>");
+    document.write("Type: " + typeof myNumber + "<br><br>");
+ 
+    document.write("=== Boolean ===<br>");
+    const myBoolean = true;
+    document.write("Value: " + myBoolean + "<br>");
+    document.write("Type: " + typeof myBoolean + "<br><br>");
+
+     document.write("=== Implicit Type Conversion (Coercion) ===<br>");
+
+     let result1 = 5 + "5";
+    document.write("5 + '5' = " + result1 + " (Type: " + typeof result1 + ")<br>");
+
+     let result2 = "10" - 3;
+    document.write("'10' - 3 = " + result2 + " (Type: " + typeof result2 + ")<br>");
+
+     let result3 = true + 2;
+    document.write("true + 2 = " + result3 + " (Type: " + typeof result3 + ")<br>");
+
+     let result4 = null + 5;
+    document.write("null + 5 = " + result4 + " (Type: " + typeof result4 + ")<br>");
+
+     let result5 = undefined + 5;
+    document.write("undefined + 5 = " + result5 + " (Type: " + typeof result5 + ")<br><br>");
+ 
+     document.write("=== Explicit Type Conversion ===<br>");
+
+     let num1 = Number("123");
+    document.write("Number('123') = " + num1 + " (Type: " + typeof num1 + ")<br>");
+
+     let str1 = String(456);
+    document.write("String(456) = '" + str1 + "' (Type: " + typeof str1 + ")<br>");
+
+     let str2 = String(false);
+    document.write("String(false) = '" + str2 + "' (Type: " + typeof str2 + ")<br>");
+
+     let bool1 = Boolean("hello");
+    document.write("Boolean('hello') = " + bool1 + " (Type: " + typeof bool1 + ")<br>");
+
+     let num2 = parseInt("100px");
+    document.write("parseInt('100px') = " + num2 + " (Type: " + typeof num2 + ")<br>");
+
+     let num3 = 200;
+    let str3 = num3.toString();
+    document.write("200.toString() = '" + str3 + "' (Type: " + typeof str3 + ")<br>");
+</script>
+
+ 
+</script>
+ 
+
+</body>
+</html>

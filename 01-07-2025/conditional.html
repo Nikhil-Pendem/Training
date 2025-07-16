@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional Statements</title>
+</head>
+<body>
+    <script>
+        document.write("<h2>====Conditional Statements====</h2>"+"<br>")
+
+        let age=Number(prompt("Enter your age"));
+        if(age>=18){
+            document.write("Eligible for Vote")
+        }
+        else{
+            document.write("Not Eligible for Vote")
+
+        }
+
+        document.write("<h2> ====if else if condition====</h2>")
+
+        let marks=Number(prompt("Enter your Marks"));
+        if(marks>90){
+            document.write("Grade-A")
+        }
+        else if(marks>80){
+            document.write("Grade-B")
+        }
+        else if(marks>70){
+            document.write("Grade-C")
+        }
+        else{
+            document.write("Fail")
+        }
+
+document.write("<h2>===Switch Statement====<h2>")
+let day = prompt("Enter a day number (1-7):");
+
+  let dayName;
+
+  switch(day) {
+    case '1':
+      dayName = "Monday";
+      break;
+    case '2':
+      dayName = "Tuesday";
+      break;
+    case '3':
+      dayName = "Wednesday";
+      break;
+    case '4':
+      dayName = "Thursday";
+      break;
+    case '5':
+      dayName = "Friday";
+      break;
+    case '6':
+      dayName = "Saturday";
+      break;
+    case '7':
+      dayName = "Sunday";
+      break;
+    default:
+      dayName = "Invalid day number!";
+  }
+
+   document.write("<h2>Day: " + dayName + "</h2>");   
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        let obj={}
+        console.log(obj)
+        console.log(typeof obj)
+
+        const person={
+            name:"Nikhil",
+            age:19,
+            address:{
+                street:"Gandhi Nagar",
+                state:"Gujarat",
+                pincode:"500100"
+            },
+            contact:{
+                email:"abc@gmail.com",
+                phonenumber:{
+                    parent:78954554545,
+                    gardien:8794579414
+                }
+            }
+                    
+        }
+        console.log(person)
+
+        
+
+        for (let p in person){
+            console.log(person[p])
+        }
+        
+    </script>
+</body>
+</html>

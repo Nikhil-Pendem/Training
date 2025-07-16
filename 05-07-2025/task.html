@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stopwatch Timer with Milliseconds & Multicolor</title>
+<style>
+   body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f0f0;
+  }
+
+  .stopwatch-box {
+    padding: 30px 40px;
+    border-radius: 15px;
+    text-align: center;
+    width: 420px;
+    color: white;
+     box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    transition: background-color 0.5s ease;
+    user-select: none;
+  }
+
+  .time-display {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    user-select: none;
+  }
+
+  button:hover:not(:disabled) {
+    background: #0056b3;
+  }
+
+  button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+</style>
+</head>
+<body>
+
+<div class="stopwatch-box" id="stopwatchBox">
+  <div class="time-display" id="time">00:00:00:000</div>
+  <div class="buttons">
+    <button id="startBtn">Start</button>
+    <button id="pauseBtn" disabled>Pause</button>
+    <button id="stopBtn" disabled>Stop</button>
+  </div>
+</div>
+
+<script>
+  let startTime = 0;
+  let elapsedTime = 0;
+  let timerInterval;
+
+  const timeDisplay = document.getElementById('time');
+  const startBtn = document.getElementById('startBtn');
+  const pauseBtn = document.getElementById('pauseBtn');
+  const stopBtn = document.getElementById('stopBtn');
+  const stopwatchBox = document.getElementById('stopwatchBox');
+
+   function timeToString(time) {
+    let diffInHrs = time / 3600000;
+    let hh = Math.floor(diffInHrs);
+
+    let diffInMin = (diffInHrs - hh) * 60;
+    let mm = Math.floor(diffInMin);
+
+    let diffInSec = (diffInMin - mm) * 60;
+    let ss = Math.floor(diffInSec);
+
+    let diffInMs = (diffInSec - ss) * 1000;
+    let ms = Math.floor(diffInMs);
+
+    let formattedHH = hh.toString().padStart(2, "0");
+    let formattedMM = mm.toString().padStart(2, "0");
+    let formattedSS = ss.toString().padStart(2, "0");
+    let formattedMS = ms.toString().padStart(3, "0");
+
+    return `${formattedHH}:${formattedMM}:${formattedSS}:${formattedMS}`;
+  }
+
+   function updateBackgroundColor(time) {
+   
+    let hue = (time / 20000) * 360 % 360;
+    stopwatchBox.style.backgroundColor = `hsl(${hue}, 70%, 50%)`;
+  }
+
+  function start() {
+    startTime = Date.now() - elapsedTime;
+    timerInterval = setInterval(function printTime() {
+      elapsedTime = Date.now() - startTime;
+      timeDisplay.textContent = timeToString(elapsedTime);
+      updateBackgroundColor(elapsedTime);
+    }, 31);  
+    startBtn.disabled = true;
+    pauseBtn.disabled = false;
+    stopBtn.disabled = false;
+  }
+
+  function pause() {
+    clearInterval(timerInterval);
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
+  }
+
+  function stop() {
+    clearInterval(timerInterval);
+    elapsedTime = 0;
+    timeDisplay.textContent = "00:00:00:000";
+    stopwatchBox.style.backgroundColor = 'hsl(0, 0%, 100%)';  
+    startBtn.disabled = false;
+    pauseBtn.disabled = true;
+    stopBtn.disabled = true;
+  }
+
+  startBtn.addEventListener('click', start);
+  pauseBtn.addEventListener('click', pause);
+  stopBtn.addEventListener('click', stop);
+</script>
+
+</body>
+</html>
